@@ -1,4 +1,13 @@
-# React + Vite
+# What to Wear Project
+
+A weather tracking website designed to help you decide appropriate clothing.
+
+## Tech Stack
+
+- HTML/CSS
+- JavaScript
+- React
+- Weather API
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

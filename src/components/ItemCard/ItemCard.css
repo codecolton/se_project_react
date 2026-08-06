@@ -1,0 +1,24 @@
+.card {
+  width: 323px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.card__image {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 30%);
+  border-radius: 16px;
+}

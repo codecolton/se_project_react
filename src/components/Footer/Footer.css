@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  line-height: 20px;
+}
+
+.footer__text,
+.footer__date {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 500;
+}
