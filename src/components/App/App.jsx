@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants";
+import {
+  coordinates,
+  apiKey,
+  defaultClothingItems,
+} from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -10,6 +14,8 @@ import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 
 function App() {
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999 },
@@ -32,7 +38,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
@@ -44,7 +50,11 @@ function App() {
     <div className="page">
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          clothingItems={clothingItems}
+          handleCardClick={handleCardClick}
+        />
         <Footer />
       </div>
       <ModalWithForm
@@ -52,6 +62,7 @@ function App() {
         buttonText="Add garment"
         activeModal={activeModal}
         onClose={closeActiveModal}
+        isOpen={activeModal === "add-garment"}
       >
         <label htmlFor="name" className="modal__label">
           Name{" "}
@@ -60,6 +71,7 @@ function App() {
             className="modal__input"
             id="name"
             placeholder="Name"
+            required
           />
         </label>
         <label htmlFor="imageUrl" className="modal__label">
@@ -69,6 +81,7 @@ function App() {
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
+            required
           />
         </label>
         <fieldset className="modal__radio-buttons">
@@ -79,6 +92,7 @@ function App() {
               name="toggle-buttons"
               type="radio"
               className="modal__radio-input"
+              value="hot"
             />{" "}
             Hot
           </label>
@@ -91,6 +105,7 @@ function App() {
               name="toggle-buttons"
               type="radio"
               className="modal__radio-input"
+              value="warm"
             />{" "}
             Warm
           </label>
@@ -103,6 +118,7 @@ function App() {
               name="toggle-buttons"
               type="radio"
               className="modal__radio-input"
+              value="cold"
             />{" "}
             Cold
           </label>
@@ -112,6 +128,7 @@ function App() {
         activeModal={activeModal}
         card={selectedCard}
         onClose={closeActiveModal}
+        isOpen={activeModal === "preview"}
       />
     </div>
   );
