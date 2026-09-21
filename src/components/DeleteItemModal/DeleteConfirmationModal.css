@@ -6,7 +6,7 @@
 .modal__delete-btn {
   border: none;
   background: transparent;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   color: #ff4d00;
   cursor: pointer;
@@ -16,7 +16,7 @@
 .modal__cancel-btn {
   border: none;
   background: transparent;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   cursor: pointer;
 }

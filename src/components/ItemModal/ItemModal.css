@@ -19,7 +19,7 @@
 }
 
 .modal__caption {
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -27,7 +27,7 @@
 }
 
 .modal__delete {
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -41,7 +41,7 @@
 
 .modal__weather {
   margin: 0;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;

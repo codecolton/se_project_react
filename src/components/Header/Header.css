@@ -10,7 +10,7 @@
 
 .header__date-and-location {
   margin: 0;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
 }
 
@@ -24,7 +24,7 @@
   margin: 0 20px 0 20px;
   border: none;
   background: transparent;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
 
 .header__username {
   margin: 0;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
 }
 
