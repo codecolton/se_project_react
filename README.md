@@ -1,6 +1,6 @@
 # What to Wear Project
 
-A weather tracking website designed to help you decide appropriate clothing.
+A weather tracking website designed to provide appropriate clothing recommendations for you based on the outside conditions.
 
 ## Tech Stack
 
@@ -9,9 +9,6 @@ A weather tracking website designed to help you decide appropriate clothing.
 - React
 - Weather API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Pitch Video
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out [this video](https://www.loom.com/share/ed5bc45545dc4448ace71f1eecb46dbc), where I describe my project and the process of building it.

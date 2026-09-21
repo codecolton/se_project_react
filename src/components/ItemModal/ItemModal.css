@@ -13,12 +13,30 @@
   padding: 20px 32px 32px;
 }
 
+.modal__footer-top {
+  display: flex;
+  gap: 275px;
+}
+
 .modal__caption {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   margin: 0 0 12px;
+}
+
+.modal__delete {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  position: absolute;
+  right: 33px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .modal__weather {

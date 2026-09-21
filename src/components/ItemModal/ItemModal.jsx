@@ -1,16 +1,28 @@
 import "./ItemModal.css";
 import closeIconWhite from "../../assets/close-button-white.png";
 
-function ItemModal({ onClose, card, isOpen }) {
+function ItemModal({ onClose, card, isOpen, onDeleteClick }) {
+  const handleDelete = () => {
+    onDeleteClick();
+  };
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content modal__content_type_image">
         <button onClick={onClose} type="button" className="modal__close">
           <img src={closeIconWhite} alt="Close button" />
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
-          <h2 className="modal__caption">{card.name}</h2>
+          <div className="modal__footer-top">
+            <h2 className="modal__caption">{card.name}</h2>
+            <button
+              onClick={handleDelete}
+              type="button"
+              className="modal__delete"
+            >
+              Delete item
+            </button>
+          </div>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
       </div>

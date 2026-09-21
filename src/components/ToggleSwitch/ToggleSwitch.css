@@ -26,6 +26,8 @@
 .toggle-switch__text {
   position: absolute;
   top: 5px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
 }
 
 .toggle-switch__text_F {
