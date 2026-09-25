@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, apiKey } from "../../utils/constants";
+import { apiKey } from "../../utils/constants";
 import { getItems, addItem, removeItem } from "../../utils/api";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -20,7 +20,7 @@ function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999, C: 999 },
-    city: "",
+    city: "Location unavailable",
     condition: "",
     isDay: false,
   });
@@ -75,12 +75,31 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, apiKey)
-      .then((data) => {
-        const filteredData = filterWeatherData(data);
-        setWeatherData(filteredData);
-      })
-      .catch(console.error);
+    const loadWeatherData = ({ latitude, longitude }) => {
+      getWeather({ latitude, longitude }, apiKey)
+        .then((data) => {
+          const filteredData = filterWeatherData(data);
+          setWeatherData(filteredData);
+        })
+        .catch(console.error);
+    };
+
+    if (!navigator.geolocation) {
+      console.warn("Geolocation is not supported by this browser.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        loadWeatherData({
+          latitude: coords.latitude,
+          longitude: coords.longitude,
+        });
+      },
+      (error) => {
+        console.warn("Unable to determine location.", error);
+      },
+    );
 
     getItems()
       .then((data) => {
